@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 export const theme = {
     breakpoints: { mobile: '480px', tablet: '768px', desktop: '1280px' },
     fonts: {
@@ -46,3 +48,5 @@ export const theme = {
     },
     transition: 'cubic-bezier(0.4, 0, 0.2, 1)',
 } as const;
+
+export type Theme = typeof theme;
