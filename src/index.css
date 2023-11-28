@@ -1,70 +1,75 @@
 @font-face {
-    font-family: 'PublicaPlay-Regular';
-    src: local('PublicaPlay-Regular'),
-        url('./assets/fonts/PublicaPlay/PublicaPlay-Regular.otf')
-            format('truetype');
+  font-family: 'PublicaPlay-Regular';
+  src: local('PublicaPlay-Regular'),
+    url('./assets/fonts/PublicaPlay/PublicaPlay-Regular.otf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Roboto-Regular';
-    src: local('Roboto-Regula'),
-        url('./assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-family: 'Roboto-Regular';
+  src: local('Roboto-Regula'),
+    url('./assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'FiraSans-Light';
-    src: local('FiraSans-Light'),
-        url('./assets/fonts/Fira_Sans/FiraSans-Light.ttf') format('truetype');
+  font-family: 'FiraSans-Light';
+  src: local('FiraSans-Light'),
+    url('./assets/fonts/Fira_Sans/FiraSans-Light.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'FiraSans-Regular';
-    src: local('FiraSans-Regular'),
-        url('./assets/fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype');
+  font-family: 'FiraSans-Regular';
+  src: local('FiraSans-Regular'),
+    url('./assets/fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'FiraSans-Medium';
-    src: local('FiraSans-Medium'),
-        url('./assets/fonts/Fira_Sans/FiraSans-Medium.ttf') format('truetype');
+  font-family: 'FiraSans-Medium';
+  src: local('FiraSans-Medium'),
+    url('./assets/fonts/Fira_Sans/FiraSans-Medium.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Oswald-Regular';
-    src: local('Oswald-Regular'),
-        url('./assets/fonts/Oswald/Oswald-Regular.ttf') format('truetype');
+  font-family: 'Oswald-Regular';
+  src: local('Oswald-Regular'),
+    url('./assets/fonts/Oswald/Oswald-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Oswald-Medium';
-    src: local('Oswald-Medium'),
-        url('./assets/fonts/Oswald/Oswald-Medium.ttf') format('truetype');
+  font-family: 'Oswald-Medium';
+  src: local('Oswald-Medium'),
+    url('./assets/fonts/Oswald/Oswald-Medium.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Oswald-Bold';
-    src: local('Oswald-Bold'),
-        url('./assets/fonts/Oswald/Oswald-Bold.ttf') format('truetype');
+  font-family: 'Oswald-Bold';
+  src: local('Oswald-Bold'),
+    url('./assets/fonts/Oswald/Oswald-Bold.ttf') format('truetype');
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'FiraSans-Regular', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: 'FiraSans-Regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  scroll-behavior: smooth;
+
+  color: #173d33;
+  background-color: #f3f5fa;
 }
 
 body::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
+  background-color: #dcefd8;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(158, 158, 158, 1);
-    border-radius: 2px;
+  background-color: #173d33;
+  border-radius: 2px;
 }
 
 h1,
@@ -76,35 +81,38 @@ h6,
 ul,
 p,
 li {
-    margin: 0;
+  margin: 0;
 }
 
 ul {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 input,
 button,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 button {
-    padding: 0;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition-property: color, background-color;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
