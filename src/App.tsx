@@ -1,21 +1,15 @@
-function App() {
+import { ThemeProvider } from 'styled-components';
+
+import { theme } from './theme/theme';
+
+const App = () => {
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <ThemeProvider theme={theme}>
+            <header>HEADER</header>
+            <main>MAIN</main>
+            <footer>FOOTER</footer>
+        </ThemeProvider>
     );
-}
+};
 
 export default App;
