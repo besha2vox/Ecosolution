@@ -1,11 +1,32 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
 import { ContainerWrapper } from '../Container/Container.styled';
+
+const backdropShown = keyframes`
+0% {
+  background-color: transparent;
+  backdrop-filter: blur(0);
+}
+100% {
+  background-color: ${({ theme }) => theme.background.backdrop};
+  backdrop-filter: blur(2px);
+}
+`;
+
+const dropdownShown = keyframes`
+0%{
+  transform: translateY(-100%);
+} 100% {
+  transform: translateY(0);
+  }
+`;
 
 export const BackDrop = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   padding: 36px 0;
+  z-index: 10;
 
   width: 100vw;
   height: 100vh;
@@ -13,11 +34,22 @@ export const BackDrop = styled.div`
   background-color: ${({ theme }) => theme.background.backdrop};
   backdrop-filter: blur(2px);
 
+  animation-name: ${backdropShown};
+  animation-duration: 500ms;
+  animation-timing-function: ${({ theme }) => theme.transition};
+  animation-iteration-count: 1;
+  transition: opacity ${({ theme }) => theme.transition};
+
   & ${ContainerWrapper} {
     position: relative;
     display: flex;
     justify-content: end;
     align-items: center;
+    overflow: hidden;
+  }
+
+  &.close {
+    opacity: 0;
   }
 `;
 
@@ -34,6 +66,11 @@ export const DropDown = styled.div`
   color: ${({ theme }) => theme.colors.light};
   background-color: ${({ theme }) => theme.background.dropdown};
   backdrop-filter: blur(12.5px);
+
+  animation-name: ${dropdownShown};
+  animation-duration: 300ms;
+  animation-timing-function: ${({ theme }) => theme.transition};
+  animation-iteration-count: 1;
 
   & ul:last-child {
     margin-top: auto;

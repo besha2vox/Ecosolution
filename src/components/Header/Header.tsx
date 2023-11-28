@@ -15,14 +15,12 @@ const Header: React.FC = () => {
   useBodyPadding(headerRef);
   const scrollPosition = useScrollPosition();
 
-  const isScrolled = scrollPosition.y > 0;
-
   const handleMenuOpen = () => {
     setIsMenuShown(true);
   };
 
   return (
-    <HeaderWrapper ref={headerRef} scrolled={isScrolled}>
+    <HeaderWrapper ref={headerRef} scrolled={scrollPosition.y > 0}>
       <Container>
         <Logo />
         <Burger onClick={handleMenuOpen}>

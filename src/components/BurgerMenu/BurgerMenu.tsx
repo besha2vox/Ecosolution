@@ -11,14 +11,20 @@ interface IBurgerMenuProps {
 }
 
 const BurgerMenu: React.FC<IBurgerMenuProps> = ({ setIsShown }) => {
+  const backDropRef = React.useRef<HTMLDivElement | null>(null);
+
   const handleCloseMenu = React.useCallback(() => {
+    if (backDropRef.current && 'classList' in backDropRef.current) {
+      backDropRef.current.classList.add('close');
+      setTimeout(() => {
+        setIsShown(false);
+      }, 300);
+      return;
+    }
     setIsShown(false);
   }, [setIsShown]);
 
   const handleCloseMenuOnBackdropClick = (e: React.MouseEvent) => {
-    console.dir(e.target);
-    console.dir(e.currentTarget.children[0]);
-
     if (
       e.target === e.currentTarget ||
       e.target === e.currentTarget.children[0]
@@ -38,7 +44,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ setIsShown }) => {
   }, [handleCloseMenu]);
 
   return (
-    <BackDrop onClick={handleCloseMenuOnBackdropClick}>
+    <BackDrop ref={backDropRef} onClick={handleCloseMenuOnBackdropClick}>
       <Container>
         <DropDown>
           <CloseButton onClick={handleCloseMenu}>

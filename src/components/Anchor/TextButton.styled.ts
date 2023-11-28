@@ -26,6 +26,7 @@ export const Ellipse = styled.div`
   background-color: ${({ theme }) => theme.background.dark};
 
   & svg {
+    z-index: 0;
     opacity: 0;
     transition: opacity ${({ theme }) => theme.transition};
   }

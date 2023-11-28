@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
     <nav>
       <NavBarList>
         {navList.map(({ name, id }) => (
-          <li>
+          <li key={id}>
             <NavButton onClick={() => scrollToElementById(id)}>
               {name} <Arrow width={16} height={16} />
             </NavButton>
