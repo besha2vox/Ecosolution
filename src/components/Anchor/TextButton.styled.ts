@@ -17,30 +17,22 @@ export const Button = styled.button`
   }
 `;
 
-export const Ellipse = styled.span`
-  position: relative;
+export const Ellipse = styled.div`
   display: flex;
-  width: fit-content;
-  height: fit-content;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 50%;
-  overflow: hidden;
+  background-color: ${({ theme }) => theme.background.dark};
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-color: ${({ theme }) => theme.background.dark};
-    opacity: 1;
+  & svg {
+    opacity: 0;
     transition: opacity ${({ theme }) => theme.transition};
   }
 
   ${Button}:hover & {
-    &::after {
-      opacity: 0;
+    & svg {
+      opacity: 1;
     }
   }
 `;

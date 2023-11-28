@@ -111,6 +111,7 @@ button {
   outline: none;
   border: none;
   background-color: transparent;
+  color: inherit;
   cursor: pointer;
   transition-property: color, background-color;
   transition-duration: 300ms;

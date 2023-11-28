@@ -36,16 +36,16 @@ export const theme = {
   colors: {
     accent: '#97D28B',
     secondary: '#173D33',
+    light: '#FFFFFF',
   },
   background: {
     primary: '#F3F5FA',
-    secondary: '#173D33BF',
-    tertiary: '#173D3340',
+    dropdown: '#173D33BF',
+    backdrop: '#173D3340',
     burger: '#DCEFD8',
     dark: '#173D33',
     scrolled: '#FFFFFF',
   },
-  blure: 'backdrop-filter: blur(2px)',
   transition: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
 } as const;
 

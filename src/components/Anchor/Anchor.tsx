@@ -9,7 +9,7 @@ const Anchor: React.FC<{ text: string }> = ({ text }) => {
     <Button onClick={() => scrollToElementById('contact-us')}>
       {text}
       <Ellipse>
-        <ElipseIcon />
+        <ElipseIcon width={14} height={14} />
       </Ellipse>
     </Button>
   );
