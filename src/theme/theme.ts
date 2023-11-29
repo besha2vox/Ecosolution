@@ -6,7 +6,7 @@ export const theme = {
       regular: 'FiraSans-Regular', // 400
       medium: 'FiraSans-Medium', // 500
     },
-    secondary: {
+    title: {
       regular: 'Oswald-Regular', // 400
       medium: 'Oswald-Medium', // 500
       bold: 'Oswald-Bold', // 700

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import Logo from '../Logo';
 import Container from '../Container';
@@ -10,9 +10,8 @@ import { useBodyPadding, useWindowWidth, useScrollPosition } from '../../hooks';
 
 const Header: React.FC = () => {
   const [isMenuShown, setIsMenuShown] = React.useState<boolean>(false);
-  const headerRef = useRef<HTMLElement>(null);
   const isMobile = useWindowWidth() === 'mobile';
-  useBodyPadding(headerRef);
+  useBodyPadding();
   const scrollPosition = useScrollPosition();
 
   const handleMenuOpen = () => {
@@ -20,7 +19,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <HeaderWrapper ref={headerRef} scrolled={scrollPosition.y > 0}>
+    <HeaderWrapper scrolled={scrollPosition.y > 0}>
       <Container>
         <Logo />
         <Burger onClick={handleMenuOpen}>

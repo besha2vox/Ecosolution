@@ -76,7 +76,7 @@ export const DropDown = styled.div`
     margin-top: auto;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     min-width: 365px;
   }
 `;

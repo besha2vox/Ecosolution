@@ -1,21 +1,22 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 
-export const useBodyPadding = (headerRef: React.RefObject<HTMLElement>) => {
-  const [headerHeight, setHeaderHeight] = useState(0);
+import { useWindowWidth } from './useWindowWidth';
+import { TDevicePadingMap } from '../types';
 
-  useEffect(() => {
-    if (headerRef.current) {
-      setHeaderHeight(headerRef.current.clientHeight);
-    }
-  }, [headerRef]);
+const devicePadingMap: TDevicePadingMap = {
+  mobile: 186,
+  tablet: 140,
+  desktop: 144,
+};
 
-  useEffect(() => {
-    document.body.style.paddingTop = `${headerHeight}px`;
+export const useBodyPadding = () => {
+  const device = useWindowWidth();
+
+  React.useEffect(() => {
+    document.body.style.paddingTop = `${devicePadingMap[device]}px`;
 
     return () => {
       document.body.style.paddingTop = '0';
     };
-  }, [headerHeight]);
-
-  return headerHeight;
+  }, [device]);
 };

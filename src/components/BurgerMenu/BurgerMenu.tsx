@@ -51,7 +51,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ setIsShown }) => {
             <CrossIcon width={20} height={20} />
             close
           </CloseButton>
-          <NavBar />
+          <NavBar closeMenu={handleCloseMenu} />
           <SocialLinks />
         </DropDown>
       </Container>

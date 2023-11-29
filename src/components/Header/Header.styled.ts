@@ -20,6 +20,10 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
     display: flex;
     align-items: center;
   }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding: 24px 0;
+  }
 `;
 
 export const Burger = styled.button`
