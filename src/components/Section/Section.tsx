@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { IChildrenProps, TDevicePadingMap } from '../../types';
-import { SectionWrapper } from './Section.styled';
 import { useWindowWidth } from '../../hooks';
 
 const devicePadingMap: TDevicePadingMap = {
@@ -14,9 +13,9 @@ const Section: React.FC<IChildrenProps> = ({ children }) => {
   const device = useWindowWidth();
 
   return (
-    <SectionWrapper padding={devicePadingMap[device]}>
+    <section style={{ padding: `${devicePadingMap[device]}px 0` }}>
       {children}
-    </SectionWrapper>
+    </section>
   );
 };
 

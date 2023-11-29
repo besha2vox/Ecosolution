@@ -55,6 +55,8 @@ body {
   font-family: 'FiraSans-Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  letter-spacing: -0.63px;
   font-size: 16px;
   scroll-behavior: smooth;
 
@@ -89,15 +91,13 @@ ul {
   list-style: none;
 }
 
-a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
 img {
   max-width: 100%;
   display: block;
+}
+
+address {
+  font-style: normal;
 }
 
 input,
@@ -106,14 +106,23 @@ select {
   font: inherit;
 }
 
+a {
+  display: block;
+  text-decoration: none;
+}
+
 button {
   padding: 0;
   outline: none;
   border: none;
   background-color: transparent;
-  color: inherit;
   cursor: pointer;
-  transition-property: color, background-color;
+}
+
+a,
+button {
+  color: inherit;
+  transition-property: color, background-color, border-color;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

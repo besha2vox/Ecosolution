@@ -2,7 +2,7 @@ import React from 'react';
 
 import { scrollToElementById } from '../../utils/scrollToElementById';
 import { ReactComponent as ElipseIcon } from '../../assets/images/icons/ellipse-light.svg';
-import { Button, Ellipse } from './TextButton.styled';
+import { Button, Ellipse } from './Anchor.styled';
 
 const Anchor: React.FC<{ text: string }> = ({ text }) => {
   return (
