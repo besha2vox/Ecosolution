@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Section from '../Section';
-import Container from '../Container';
-import Title from '../Title';
+import Section from '../shared/Section';
+import Container from '../shared/Container';
+import Title from '../shared/Title';
 import { containerStyle, BlockWrapper } from './About.styled';
 import AboutGrid from '../AboutGrid/AboutGrid';
 

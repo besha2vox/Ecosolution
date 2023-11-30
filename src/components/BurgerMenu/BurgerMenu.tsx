@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from '../Container';
+import Container from '../shared/Container';
 import NavBar from '../NavBar';
 import { ReactComponent as CrossIcon } from '../../assets/images/icons/cross.svg';
 import { BackDrop, DropDown, CloseButton } from './BurgerMenu.styled';

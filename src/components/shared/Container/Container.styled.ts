@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { TDevice, TStyle } from '../../types';
+import { TDevice, TStyle } from '../../../types';
 
 export interface IContainerWrapperProps {
   device: TDevice;

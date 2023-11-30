@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { TStyle } from '../../types';
+import { TStyle } from '../../../types';
 
 export interface ITitleStyledProps {
   styles?: TStyle;

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { ContainerWrapper } from '../Container/Container.styled';
+import { ContainerWrapper } from '../shared/Container/Container.styled';
 
 const backdropShown = keyframes`
 0% {

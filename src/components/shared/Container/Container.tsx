@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { IChildrenProps } from '../../types';
-import { useWindowWidth } from '../../hooks';
+import { IChildrenProps } from '../../../types';
+import { useWindowWidth } from '../../../hooks';
 import { ContainerWrapper, IContainerWrapperProps } from './Container.styled';
 
 interface TContainerProps

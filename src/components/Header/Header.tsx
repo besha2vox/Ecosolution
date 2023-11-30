@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useBodyPadding, useWindowWidth, useScrollPosition } from '../../hooks';
 
-import Logo from '../Logo';
-import Container from '../Container';
+import Logo from '../shared/Logo';
+import Container from '../shared/Container';
 import Anchor from '../Anchor';
 import BurgerMenu from '../BurgerMenu';
 import { ReactComponent as BurgerMenuIcon } from '../../assets/images/icons/menu.svg';

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { IChildrenProps, TDevicePadingMap, TSectionId } from '../../types';
-import { useWindowWidth } from '../../hooks';
+import { IChildrenProps, TDevicePadingMap, TSectionId } from '../../../types';
+import { useWindowWidth } from '../../../hooks';
 
 interface ISectionProps extends IChildrenProps {
   id: TSectionId;

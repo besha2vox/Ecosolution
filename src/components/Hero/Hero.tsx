@@ -4,9 +4,9 @@ import { scrollToElementById } from '../../utils/scrollToElementById';
 import { useWindowWidth } from '../../hooks';
 import { TDevicePadingMap } from '../../types';
 
-import Section from '../Section';
-import Container from '../Container';
-import Title from '../Title';
+import Section from '../shared/Section';
+import Container from '../shared/Container';
+import Title from '../shared/Title';
 import ContactInfo from '../ContactInfo';
 import { ReactComponent as ArrowIcon } from '../../assets/images/icons/arrow-right.svg';
 import { HeroWrapper, Button, Ellipse } from './Hero.styled';

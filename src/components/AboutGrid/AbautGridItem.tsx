@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TStyle } from '../../types';
 
-import Title from '../Title';
+import Title from '../shared/Title';
 import {
   Description,
   GridItemWrapper,
