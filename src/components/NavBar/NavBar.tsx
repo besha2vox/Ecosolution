@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { navList } from './navList';
+import { navList } from '../../utils/constants/navList';
 import { scrollToElementById } from '../../utils/scrollToElementById';
 import { ReactComponent as Arrow } from '../../assets/images/icons/arrow.svg';
 import { NavBarList, NavButton } from './NavBar.styled';

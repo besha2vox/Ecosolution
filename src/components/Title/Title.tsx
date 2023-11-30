@@ -1,19 +1,33 @@
 import React from 'react';
 
-import { TitlePrimery, TitleSecondary } from './Title.styled';
+import { ITitleStyledProps, TITLES } from './Title.styled';
 
-interface ITitleProps {
+interface ITitleProps extends ITitleStyledProps {
   title: string;
-  isPrimary?: boolean;
-  style?: { [key: string]: string | number };
+  type: 'h1' | 'h2' | 'h3';
+  Icon?: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
-const Titlle: React.FC<ITitleProps> = ({ title, isPrimary, ...props }) => {
-  if (isPrimary) {
-    return <TitlePrimery {...props}>{title}</TitlePrimery>;
-  }
+interface ITitleComponentProps extends Omit<ITitleProps, 'type'> {
+  Component: (typeof TITLES)['h1'];
+}
 
-  return <TitleSecondary {...props}>{title}</TitleSecondary>;
+const TitleComponent: React.FC<ITitleComponentProps> = ({
+  Component,
+  title,
+  Icon,
+  ...props
+}) => {
+  return (
+    <Component {...props}>
+      {Icon && <Icon width={24} height={24} />}
+      {title}
+    </Component>
+  );
+};
+
+const Titlle: React.FC<ITitleProps> = ({ type, ...props }) => {
+  return <TitleComponent {...props} Component={TITLES[type]} />;
 };
 
 export default Titlle;

@@ -1,4 +1,6 @@
-const IconButton = () => {
+import React from 'react';
+
+const IconButton: React.FC = () => {
   return <></>;
 };
 

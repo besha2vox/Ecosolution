@@ -2,12 +2,20 @@ import React from 'react';
 
 import { IChildrenProps } from '../../types';
 import { useWindowWidth } from '../../hooks';
-import { ContainerWrapper } from './Container.styled';
+import { ContainerWrapper, IContainerWrapperProps } from './Container.styled';
 
-const Container: React.FC<IChildrenProps> = ({ children }) => {
+interface TContainerProps
+  extends IChildrenProps,
+    Omit<IContainerWrapperProps, 'device'> {}
+
+const Container: React.FC<TContainerProps> = ({ children, ...props }) => {
   const device = useWindowWidth();
 
-  return <ContainerWrapper device={device}>{children}</ContainerWrapper>;
+  return (
+    <ContainerWrapper device={device} {...props}>
+      {children}
+    </ContainerWrapper>
+  );
 };
 
 export default Container;

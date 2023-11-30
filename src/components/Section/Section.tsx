@@ -1,7 +1,11 @@
 import React from 'react';
 
-import { IChildrenProps, TDevicePadingMap } from '../../types';
+import { IChildrenProps, TDevicePadingMap, TSectionId } from '../../types';
 import { useWindowWidth } from '../../hooks';
+
+interface ISectionProps extends IChildrenProps {
+  id: TSectionId;
+}
 
 const devicePadingMap: TDevicePadingMap = {
   mobile: 36,
@@ -9,7 +13,7 @@ const devicePadingMap: TDevicePadingMap = {
   desktop: 120,
 };
 
-const Section: React.FC<IChildrenProps> = ({ children }) => {
+const Section: React.FC<ISectionProps> = ({ children }) => {
   const device = useWindowWidth();
 
   return (

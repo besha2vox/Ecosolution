@@ -40,6 +40,7 @@ export const theme = {
   },
   background: {
     primary: '#F3F5FA',
+    secondary: '#EAEDF1',
     dropdown: '#173D33BF',
     backdrop: '#173D3340',
     burger: '#DCEFD8',

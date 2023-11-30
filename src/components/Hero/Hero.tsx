@@ -24,10 +24,10 @@ const Hero: React.FC = () => {
   const device = useWindowWidth();
 
   return (
-    <Section>
+    <Section id="main">
       <Container>
         <HeroWrapper>
-          <Title isPrimary={true} title="RENEWABLE ENERGY For any task" />
+          <Title type="h2" title="RENEWABLE ENERGY For any task" />
           <p>
             Development and implementation of renewable non-polluting energy
             sources, generating power generation using energy wind, sun, water,

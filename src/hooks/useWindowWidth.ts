@@ -11,7 +11,7 @@ export const useWindowWidth = (): TDevice => {
 
   window.addEventListener('resize', handleWidth);
 
-  if (windowWidth <= 768) return 'mobile';
+  if (windowWidth < 768) return 'mobile';
   if (windowWidth >= 1280) return 'desktop';
   return 'tablet';
 };

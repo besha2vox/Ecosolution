@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-import { TDevice } from '../../types';
+import { TDevice, TStyle } from '../../types';
 
-interface CContainerWrapperProps {
+export interface IContainerWrapperProps {
   device: TDevice;
+  styles?: TStyle;
 }
 
-export const ContainerWrapper = styled.div<CContainerWrapperProps>`
+export const ContainerWrapper = styled.div<IContainerWrapperProps>`
+  ${({ styles }) => (styles ? styles : '')}
   margin: 0 auto;
   padding: 0 20px;
   max-width: ${({ theme, device }) => theme.breakpoints[device]};

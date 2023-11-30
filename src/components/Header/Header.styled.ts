@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { ContainerWrapper } from '../Container/Container.styled';
+export const containerStyle = css`
+  display: flex;
+  align-items: center;
+`;
 
 interface HeaderWrapperProps {
   scrolled: boolean;
@@ -15,11 +18,6 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
   background-color: ${({ theme, scrolled }) =>
     scrolled ? theme.background.scrolled : theme.background.primary};
   transition: background-color ${({ theme }) => theme.transition};
-
-  & ${ContainerWrapper} {
-    display: flex;
-    align-items: center;
-  }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     padding: 24px 0;

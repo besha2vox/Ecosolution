@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { TitlePrimery } from '../Title/Title.styled';
-
 export const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,9 +17,7 @@ export const HeroWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
-    grid-template-areas:
-      'title description'
-      'title button';
+    grid-template-areas: 'title description' 'title button';
 
     & p {
       grid-area: description;

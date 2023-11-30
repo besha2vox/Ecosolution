@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { useBodyPadding, useWindowWidth, useScrollPosition } from '../../hooks';
+
 import Logo from '../Logo';
 import Container from '../Container';
 import Anchor from '../Anchor';
 import BurgerMenu from '../BurgerMenu';
-import { HeaderWrapper, Burger } from './Header.styled';
 import { ReactComponent as BurgerMenuIcon } from '../../assets/images/icons/menu.svg';
-import { useBodyPadding, useWindowWidth, useScrollPosition } from '../../hooks';
+import { HeaderWrapper, Burger, containerStyle } from './Header.styled';
 
 const Header: React.FC = () => {
   const [isMenuShown, setIsMenuShown] = React.useState<boolean>(false);
@@ -20,7 +21,7 @@ const Header: React.FC = () => {
 
   return (
     <HeaderWrapper scrolled={scrollPosition.y > 0}>
-      <Container>
+      <Container styles={containerStyle}>
         <Logo />
         <Burger onClick={handleMenuOpen}>
           <BurgerMenuIcon width={16} height={16} />
