@@ -2,7 +2,7 @@ import React from 'react';
 
 import { CompanyName, CompanySlogan, LogoLink } from './Logo.styled';
 
-import { ReactComponent as LogoIcon } from '../../assets/images/icons/logo.svg';
+import { ReactComponent as LogoIcon } from '../../../assets/images/icons/logo.svg';
 
 const Logo: React.FC = () => {
   return (

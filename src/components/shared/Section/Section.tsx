@@ -4,7 +4,7 @@ import { IChildrenProps, TDevicePadingMap, TSectionId } from '../../../types';
 import { useWindowWidth } from '../../../hooks';
 
 interface ISectionProps extends IChildrenProps {
-  id: TSectionId;
+  id?: TSectionId;
 }
 
 const devicePadingMap: TDevicePadingMap = {

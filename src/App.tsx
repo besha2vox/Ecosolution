@@ -5,6 +5,7 @@ import { theme, Theme } from './theme/theme';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Electricity from './components/Electricity';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <main>
         <Hero />
         <About />
+        <Electricity />
       </main>
       <footer>FOOTER</footer>
     </ThemeProvider>
