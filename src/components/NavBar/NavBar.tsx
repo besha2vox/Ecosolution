@@ -11,6 +11,8 @@ interface INavBarProps {
 
 const NavBar: React.FC<INavBarProps> = ({ closeMenu }) => {
   const handleClick = (id: string) => {
+    console.log({ id });
+
     closeMenu();
     scrollToElementById(id);
   };

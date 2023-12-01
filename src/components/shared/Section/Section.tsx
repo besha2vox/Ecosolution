@@ -13,11 +13,11 @@ const devicePadingMap: TDevicePadingMap = {
   desktop: 120,
 };
 
-const Section: React.FC<ISectionProps> = ({ children }) => {
+const Section: React.FC<ISectionProps> = ({ children, id }) => {
   const device = useWindowWidth();
 
   return (
-    <section style={{ padding: `${devicePadingMap[device]}px 0` }}>
+    <section id={id} style={{ padding: `${devicePadingMap[device]}px 0` }}>
       {children}
     </section>
   );

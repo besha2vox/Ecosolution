@@ -4,6 +4,7 @@ export const theme = {
     tablet: '768px',
     desktop: '1280px',
     maxMobile: '767px',
+    maxTablet: '1279px',
   },
   fonts: {
     main: {

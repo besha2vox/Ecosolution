@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { TDevice, TDevicePadingMap, TStyle } from '../../types';
+import { contactsData } from '../../utils/data/contactsData';
 
 import { ContactInfoWrapper } from './ContactInfo.styled';
 
@@ -15,6 +16,8 @@ const devicePadingMap: TDevicePadingMap = {
   desktop: 12,
 };
 
+const { email, address, addressLink } = contactsData;
+
 const ContactInfo: React.FC<IContactInfoProps> = ({ device, ...props }) => {
   return (
     <ContactInfoWrapper
@@ -22,11 +25,9 @@ const ContactInfo: React.FC<IContactInfoProps> = ({ device, ...props }) => {
       {...props}
     >
       <address>
-        <a href="https://maps.app.goo.gl/vKHzX6RgiLm8ws21A">
-          79005, Ukraine, Lviv street. Shota Rustaveli, 7
-        </a>
+        <a href={addressLink}>{address}</a>
       </address>
-      <a href="mailto:office@ecosolution.com">office@ecosolution.com</a>
+      <a href={`mailto:${email}`}>{email}</a>
       {device !== 'mobile' && <p>ecosolution &copy; 2023</p>}
     </ContactInfoWrapper>
   );

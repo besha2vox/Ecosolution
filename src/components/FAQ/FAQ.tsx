@@ -12,7 +12,7 @@ import QAndA from './Q&A';
 
 const FAQComponent: React.FC<IChildrenProps> = ({ children }) => {
   return (
-    <Section>
+    <Section id="faq">
       <Container styles={containerStyles}>{children}</Container>
     </Section>
   );

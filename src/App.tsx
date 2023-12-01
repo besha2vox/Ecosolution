@@ -8,6 +8,7 @@ import About from './components/About';
 import Electricity from './components/Electricity';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
+import ContactUs from './components/ContactUs';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <About />
         <Electricity />
         <FAQ />
+        <ContactUs />
       </main>
       <Footer />
     </ThemeProvider>
