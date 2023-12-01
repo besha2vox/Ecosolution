@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-export const ContactInfoWrapper = styled.div`
+import { TStyle } from '../../types';
+
+export const ContactInfoWrapper = styled.div<{ styles?: TStyle }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 8px;
+
+  ${({ styles }) => styles}
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: row;

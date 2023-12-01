@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Electricity from './components/Electricity';
+import Footer from './components/Footer';
+import FAQ from './components/FAQ';
 
 const App = () => {
   return (
@@ -15,8 +17,9 @@ const App = () => {
         <Hero />
         <About />
         <Electricity />
+        <FAQ />
       </main>
-      <footer>FOOTER</footer>
+      <Footer />
     </ThemeProvider>
   );
 };

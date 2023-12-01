@@ -39,6 +39,10 @@ export const Button = styled.button`
   border-radius: 500px;
   border: 1px solid #97d28b;
 
+  & svg {
+    stroke: currentColor;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.background.dark};
     color: ${({ theme }) => theme.colors.accent};

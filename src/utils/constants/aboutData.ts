@@ -8,37 +8,6 @@ import windFarmsFields_2x from '../../assets/images/x2/wind-farms-fields 1-min.j
 import solarPanels_1x from '../../assets/images/x1/man-worker-firld-by-solar-panels-min.jpg';
 import solarPanels_2x from '../../assets/images/x2/man-worker-firld-by-solar-panels 1-min.jpg';
 
-// export const ABOUT_DATA = [
-//   {
-//     title: 'Openness',
-//     description: 'to the world, people, new ideas and projects',
-//     Icon: OpennessIcon,
-//     order: 1,
-//   },
-//   {
-//     title: 'Responsibility',
-//     description:
-//       'we are aware that the results of our work have an impact on our lives and the lives of future generations',
-//     Icon: ResponsibilityIcon,
-//     order: 2,
-//   },
-//   {
-//     title: 'Innovation',
-//     description:
-//       'we use the latest technology to implement non-standard solutions',
-//     Icon: InnovationIcon,
-
-//     order: 5,
-//   },
-//   {
-//     title: 'Quality',
-//     description:
-//       'we do not strive to be the first among others, but we want to be the best in our business',
-//     Icon: QualityIcon,
-//     order: 6,
-//   },
-// ];
-
 export const ABOUT_DATA = [
   {
     title: 'Openness',

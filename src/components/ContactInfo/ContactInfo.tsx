@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { TDevice, TDevicePadingMap } from '../../types';
+import { TDevice, TDevicePadingMap, TStyle } from '../../types';
 
 import { ContactInfoWrapper } from './ContactInfo.styled';
 
 interface IContactInfoProps {
-  device: TDevice;
+  device?: TDevice;
+  styles?: TStyle;
 }
 
 const devicePadingMap: TDevicePadingMap = {
@@ -14,18 +15,19 @@ const devicePadingMap: TDevicePadingMap = {
   desktop: 12,
 };
 
-const ContactInfo: React.FC<IContactInfoProps> = ({ device }) => {
-  const isMobile = device === 'mobile';
-
+const ContactInfo: React.FC<IContactInfoProps> = ({ device, ...props }) => {
   return (
-    <ContactInfoWrapper style={{ paddingTop: devicePadingMap[device] }}>
+    <ContactInfoWrapper
+      style={device && { paddingTop: devicePadingMap[device] }}
+      {...props}
+    >
       <address>
         <a href="https://maps.app.goo.gl/vKHzX6RgiLm8ws21A">
           79005, Ukraine, Lviv street. Shota Rustaveli, 7
         </a>
       </address>
       <a href="mailto:office@ecosolution.com">office@ecosolution.com</a>
-      {!isMobile && <p>ecosolution &copy; 2023</p>}
+      {device !== 'mobile' && <p>ecosolution &copy; 2023</p>}
     </ContactInfoWrapper>
   );
 };

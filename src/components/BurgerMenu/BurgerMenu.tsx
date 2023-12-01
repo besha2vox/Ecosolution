@@ -4,7 +4,7 @@ import Container from '../shared/Container';
 import NavBar from '../NavBar';
 import { ReactComponent as CrossIcon } from '../../assets/images/icons/cross.svg';
 import { BackDrop, DropDown, CloseButton } from './BurgerMenu.styled';
-import SocialLinks from '../SocialLinks';
+import SocialLinks from '../shared/SocialLinks';
 
 interface IBurgerMenuProps {
   setIsShown: (param: boolean) => void;
