@@ -26,8 +26,8 @@ const TitleComponent: React.FC<ITitleComponentProps> = ({
   );
 };
 
-const Titlle: React.FC<ITitleProps> = ({ type, ...props }) => {
+const Title: React.FC<ITitleProps> = ({ type, ...props }) => {
   return <TitleComponent {...props} Component={TITLES[type]} />;
 };
 
-export default Titlle;
+export default Title;

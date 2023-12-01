@@ -1,5 +1,5 @@
 import { RuleSet } from 'styled-components';
-import { navList } from '../utils/constants/navList';
+import { navList } from '../utils/data/navList';
 
 export type TDevice = 'mobile' | 'tablet' | 'desktop';
 

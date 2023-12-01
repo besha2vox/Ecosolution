@@ -6,7 +6,7 @@ import Section from '../shared/Section';
 import Container from '../shared/Container';
 import Title from '../shared/Title';
 import Anchor from '../Anchor';
-import { containerStyles } from './FAQ.syled';
+import { FAQWrapper, containerStyles } from './FAQ.syled';
 import { useWindowWidth } from '../../hooks';
 import QAndA from './Q&A';
 
@@ -25,7 +25,7 @@ const FAQ: React.FC = () => {
     return (
       <FAQComponent>
         <Title type="h2" title="Frequently Asked Questions" />
-        <div>FAQ</div>
+        <QAndA />
         <p>Didn't find the answer to your question? </p>
         <Anchor text="Contact Us" />
       </FAQComponent>
@@ -34,11 +34,11 @@ const FAQ: React.FC = () => {
 
   return (
     <FAQComponent>
-      <div>
+      <FAQWrapper>
         <Title type="h2" title="Frequently Asked Questions" />
-        <p>Didn't find the answer to your question? </p>
+        <p>Didn't find the answer to your question?</p>
         <Anchor text="Contact Us" />
-      </div>
+      </FAQWrapper>
       <QAndA />
     </FAQComponent>
   );

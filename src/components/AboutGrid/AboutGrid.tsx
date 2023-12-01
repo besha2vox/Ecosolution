@@ -1,16 +1,13 @@
 import React from 'react';
 
 import { useWindowWidth } from '../../hooks';
-import { ABOUT_DATA } from '../../utils/constants/aboutData';
+import { ABOUT_DATA } from '../../utils/data/aboutData';
 
 import AboutGridItem from './AbautGridItem';
 import { GridList, ImgWrapper, gridOptions } from './AboutGrid.styled';
 
 const AboutGrid: React.FC = () => {
   const isMobile = useWindowWidth() === 'mobile';
-  if (isMobile) {
-    console.log({ isMobile });
-  }
 
   const grid = {
     row: 1,
@@ -40,6 +37,7 @@ const AboutGrid: React.FC = () => {
           return (
             !isMobile && (
               <ImgWrapper
+                key={props.alt}
                 styles={gridOptions(grid.row, `${grid.column} / span 2`)}
               >
                 <img
