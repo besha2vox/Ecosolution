@@ -126,7 +126,13 @@ export const FAQWrapper = styled.div`
     text-align: center;
 
     & h2 {
+      margin: 0 auto;
       max-width: 398px;
+      text-align: start;
+    }
+
+    & p {
+      font-size: ${({ theme }) => theme.fontSizes[6]};
     }
   }
 `;

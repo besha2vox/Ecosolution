@@ -18,7 +18,7 @@ const QAndA: React.FC = () => {
             activeSection={activeSection}
             setActiveSection={setActiveSection}
             {...props}
-          ></QAndAItem>
+          />
         );
       })}
     </QAndAList>

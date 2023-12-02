@@ -9,7 +9,7 @@ import { ContactUsWrapper, titleStyles } from './ContactUs.styled';
 
 const ContactUs: React.FC = () => {
   return (
-    <Section>
+    <Section id="contact-us">
       <Container>
         <Title styles={titleStyles} type="h2" title="Contact us" />
         <ContactUsWrapper>

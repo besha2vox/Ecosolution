@@ -9,6 +9,7 @@ import Electricity from './components/Electricity';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import ContactUs from './components/ContactUs';
+import Customers from './components/Customers';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <About />
         <Electricity />
         <FAQ />
+        <Customers />
         <ContactUs />
       </main>
       <Footer />
