@@ -2,6 +2,8 @@ import React from 'react';
 
 import { navList } from '../../utils/data/navList';
 import { scrollToElementById } from '../../utils/scrollToElementById';
+import { TSectionId } from '../../types';
+
 import { ReactComponent as Arrow } from '../../assets/images/icons/arrow.svg';
 import { NavBarList, NavButton } from './NavBar.styled';
 
@@ -10,9 +12,7 @@ interface INavBarProps {
 }
 
 const NavBar: React.FC<INavBarProps> = ({ closeMenu }) => {
-  const handleClick = (id: string) => {
-    console.log({ id });
-
+  const handleClick = (id: TSectionId) => {
     closeMenu();
     scrollToElementById(id);
   };

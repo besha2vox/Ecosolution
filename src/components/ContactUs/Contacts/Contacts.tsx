@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { contactsData } from '../../utils/data/contactsData';
+import { contactsData } from '../../../utils/data/contactsData';
 
-import { ReactComponent as PhoneIcon } from '../../assets/images/icons/call.svg';
-import { ReactComponent as EmailIcon } from '../../assets/images/icons/sms.svg';
-import { ReactComponent as MapIcon } from '../../assets/images/icons/map.svg';
-import SocialLinks from '../shared/SocialLinks';
-import { ContactItem, ContactLink, ContactList } from './ContactUs.styled';
+import { ReactComponent as PhoneIcon } from '../../../assets/images/icons/call.svg';
+import { ReactComponent as EmailIcon } from '../../../assets/images/icons/sms.svg';
+import { ReactComponent as MapIcon } from '../../../assets/images/icons/map.svg';
+import SocialLinks from '../../shared/SocialLinks';
+import { ContactItem, ContactLink, ContactList } from './Contacts.styled';
 
 const { phones, email, address, addressLink } = contactsData;
 

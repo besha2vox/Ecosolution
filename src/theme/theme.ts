@@ -43,6 +43,8 @@ export const theme = {
     accent: '#97D28B',
     secondary: '#173D33',
     light: '#FFFFFF',
+    placeholder: '#BDBDBD',
+    error: '#D28B8B',
   },
   background: {
     primary: '#F3F5FA',

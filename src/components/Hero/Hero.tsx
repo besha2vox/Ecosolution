@@ -8,11 +8,11 @@ import Section from '../shared/Section';
 import Container from '../shared/Container';
 import Title from '../shared/Title';
 import ContactInfo from '../ContactInfo';
-import { ReactComponent as ArrowIcon } from '../../assets/images/icons/arrow-right.svg';
-import { HeroWrapper, Button, Ellipse } from './Hero.styled';
+import { HeroWrapper } from './Hero.styled';
 
 import imageX1 from '../../assets/images/x1/hero-min.jpg';
 import imageX2 from '../../assets/images/x2/hero.jpg';
+import TextButton from '../shared/TextButton';
 
 const devicePadingMap: TDevicePadingMap = {
   mobile: 36,
@@ -22,6 +22,10 @@ const devicePadingMap: TDevicePadingMap = {
 
 const Hero: React.FC = () => {
   const device = useWindowWidth();
+
+  const handleGoToContactUs = () => {
+    scrollToElementById('cases');
+  };
 
   return (
     <Section id="main">
@@ -33,12 +37,7 @@ const Hero: React.FC = () => {
             sources, generating power generation using energy wind, sun, water,
             biomass
           </p>
-          <Button onClick={() => scrollToElementById('scrollToElementById')}>
-            Lern more
-            <Ellipse>
-              <ArrowIcon width={16} height={16} />
-            </Ellipse>
-          </Button>
+          <TextButton text="Lern more" handleClick={handleGoToContactUs} />
         </HeroWrapper>
         <ContactInfo device={device} />
         <img
