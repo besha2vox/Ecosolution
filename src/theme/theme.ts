@@ -37,7 +37,8 @@ export const theme = {
     '48px', // 11
     '64px', // 12
     '100px', // 13
-    '164px', // 14
+    '124px', // 14
+    '164px', // 15
   ],
   colors: {
     accent: '#97D28B',

@@ -68,7 +68,7 @@ export const AmountEnergyProduced = styled.p`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     font-size: ${({ theme }) => theme.fontSizes[11]};
     & span {
-      font-size: ${({ theme }) => theme.fontSizes[14]};
+      font-size: ${({ theme }) => theme.fontSizes[15]};
     }
   }
 `;
