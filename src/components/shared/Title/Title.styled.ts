@@ -14,10 +14,10 @@ const defaultTitleStyles = css`
 `;
 
 const H1 = styled.h1<ITitleStyledProps>`
-  ${({ styles }) => (styles ? styles : '')}
-  ${defaultTitleStyles}
   font-size: ${({ theme }) => theme.fontSizes[10]};
   letter-spacing: 1px;
+  ${defaultTitleStyles}
+  ${({ styles }) => (styles ? styles : '')}
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-area: title;
@@ -33,9 +33,10 @@ const H1 = styled.h1<ITitleStyledProps>`
 `;
 
 const H2 = styled.h2<ITitleStyledProps>`
-  ${({ styles }) => (styles ? styles : '')}
   ${defaultTitleStyles}
   font-size: ${({ theme }) => theme.fontSizes[7]};
+
+  ${({ styles }) => (styles ? styles : '')}
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: ${({ theme }) => theme.fontSizes[10]};
@@ -47,10 +48,11 @@ const H2 = styled.h2<ITitleStyledProps>`
 `;
 
 const H3 = styled.h3<ITitleStyledProps>`
-  ${({ styles }) => (styles ? styles : '')}
   ${defaultTitleStyles}
   font-size: ${({ theme }) => theme.fontSizes[3]};
   line-height: 1.333;
+
+  ${({ styles }) => (styles ? styles : '')}
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: ${({ theme }) => theme.fontSizes[4]};

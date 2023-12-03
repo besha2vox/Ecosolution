@@ -1,4 +1,5 @@
 import { ThemeProvider } from 'styled-components';
+import 'basiclightbox/dist/basicLightbox.min.css';
 
 import { theme, Theme } from './theme/theme';
 

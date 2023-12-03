@@ -1,10 +1,9 @@
 import React from 'react';
-import * as basicLightbox from 'basiclightbox';
-import 'basiclightbox/dist/basicLightbox.min.css';
 
 import { TDevice } from '../../../types';
-
+import { openLightbox } from '../../../utils/openLightbox';
 import { TCasesSlider } from '../../../utils/data/casesData';
+
 import {
   ArrowIcon,
   CompanyInfo,
@@ -25,13 +24,6 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({ slides, currentIndex, device }) => {
   const [translateX, setTranslateX] = React.useState<string>('0');
-
-  const openLightbox = (imgX1: string, imgX2: string, alt: string) => {
-    const lightbox = basicLightbox.create(`
-      <img src="${imgX2}" srcset="${imgX1} 1x, ${imgX2} 2x" alt="${alt}"/>
-    `);
-    lightbox.show();
-  };
 
   const calculateTransleteX = React.useCallback(
     (currentInx: number) => {
@@ -82,7 +74,7 @@ const Slider: React.FC<SliderProps> = ({ slides, currentIndex, device }) => {
                   </CompanyInfo>
                   <IconButton
                     isBackgroundFill={true}
-                    handleClick={() => openLightbox(imgX2, imgX1, description)}
+                    handleClick={() => openLightbox(imgX1, imgX2, description)}
                     Icon={ArrowIcon}
                     styles={buttonUpStyles}
                   />
