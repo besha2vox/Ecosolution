@@ -9,49 +9,52 @@ import { GridList, ImgWrapper, gridOptions } from './AboutGrid.styled';
 const AboutGrid: React.FC = () => {
   const isMobile = useWindowWidth() === 'mobile';
 
-  const grid = {
-    row: 1,
-    column: 0,
+  const options = {
+    img: { column: '3 / span 2', order: 3 },
+    description: { column: 1, order: 1 },
   };
 
   return (
     <GridList>
-      {ABOUT_DATA.map((props) => {
-        if (grid.column === 3) {
-          grid.row += 1;
-          grid.column = 1;
+      {ABOUT_DATA.map(({ img, description }, i) => {
+        if (i % 2 === 0) {
+          options.img.column = '3 / span 2';
+          options.description.column = 1;
+          options.img.order = (i + 1) * 3;
+          options.description.order = (i + 1) * 3 - 2;
         } else {
-          grid.column += 1;
+          options.img.column = '1 / span 2';
+          options.description.column = 2;
+          options.img.order = (i + 1) * -2;
+          options.description.order = (i + 1) * 3;
         }
 
-        if (props.title) {
-          return (
-            <AboutGridItem
-              styles={gridOptions(grid.row, grid.column)}
-              key={props.title}
-              {...props}
-            />
-          );
-        }
-        if (props.alt) {
-          return (
-            !isMobile && (
+        return (
+          <>
+            {!isMobile && (
               <ImgWrapper
-                key={props.alt}
-                styles={gridOptions(grid.row, `${grid.column} / span 2`)}
+                key={img.alt}
+                styles={gridOptions(i + 1, `${options.img.column}`)}
               >
                 <img
                   width={1240}
-                  srcSet={`${props.imgX1} 1x, ${props.imgX2} 2x`}
-                  src={props.imgX1}
-                  alt={props.alt}
+                  srcSet={`${img.imgX1} 1x, ${img.imgX2} 2x`}
+                  src={img.imgX1}
+                  alt={img.alt}
                 />
               </ImgWrapper>
-            )
-          );
-        }
-
-        return '';
+            )}
+            {description.map((props, i) => {
+              return (
+                <AboutGridItem
+                  styles={gridOptions(i + 1, options.description.column + i)}
+                  key={props.title}
+                  {...props}
+                />
+              );
+            })}
+          </>
+        );
       })}
     </GridList>
   );
