@@ -1,6 +1,7 @@
 import React from 'react';
+import { TSectionId } from '../types';
 
-const useScrollSectionHighlighter = (): string => {
+const useScrollSectionHighlighter = (): TSectionId | '' => {
   const [visibleSectionId, setVisibleSectionId] = React.useState<string>('');
 
   const handleScroll = React.useCallback(() => {
@@ -26,7 +27,7 @@ const useScrollSectionHighlighter = (): string => {
     };
   }, [handleScroll, visibleSectionId]);
 
-  return visibleSectionId;
+  return visibleSectionId as TSectionId | '';
 };
 
 export default useScrollSectionHighlighter;

@@ -5,12 +5,14 @@ import NavBar from '../NavBar';
 import { ReactComponent as CrossIcon } from '../../assets/images/icons/cross.svg';
 import { BackDrop, DropDown, CloseButton } from './BurgerMenu.styled';
 import SocialLinks from '../shared/SocialLinks';
+import { TSectionId } from '../../types';
 
 interface IBurgerMenuProps {
   setIsShown: (param: boolean) => void;
+  sectionId: TSectionId | '';
 }
 
-const BurgerMenu: React.FC<IBurgerMenuProps> = ({ setIsShown }) => {
+const BurgerMenu: React.FC<IBurgerMenuProps> = ({ setIsShown, sectionId }) => {
   const backDropRef = React.useRef<HTMLDivElement | null>(null);
 
   const handleCloseMenu = React.useCallback(() => {
@@ -51,7 +53,7 @@ const BurgerMenu: React.FC<IBurgerMenuProps> = ({ setIsShown }) => {
             <CrossIcon width={20} height={20} />
             close
           </CloseButton>
-          <NavBar closeMenu={handleCloseMenu} />
+          <NavBar sectionId={sectionId} closeMenu={handleCloseMenu} />
           <SocialLinks />
         </DropDown>
       </Container>

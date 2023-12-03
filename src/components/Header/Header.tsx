@@ -8,12 +8,14 @@ import Anchor from '../Anchor';
 import BurgerMenu from '../BurgerMenu';
 import { ReactComponent as BurgerMenuIcon } from '../../assets/images/icons/menu.svg';
 import { HeaderWrapper, Burger, containerStyle } from './Header.styled';
+import useScrollSectionHighlighter from '../../hooks/useScrollSectionHighlighter';
 
 const Header: React.FC = () => {
   const [isMenuShown, setIsMenuShown] = React.useState<boolean>(false);
   const isMobile = useWindowWidth() === 'mobile';
   useBodyPadding();
   const scrollPosition = useScrollPosition();
+  const sectionId = useScrollSectionHighlighter();
 
   const handleMenuOpen = () => {
     setIsMenuShown(true);
@@ -26,7 +28,9 @@ const Header: React.FC = () => {
         <Burger onClick={handleMenuOpen}>
           <BurgerMenuIcon width={16} height={16} />
         </Burger>
-        {isMenuShown && <BurgerMenu setIsShown={setIsMenuShown} />}
+        {isMenuShown && (
+          <BurgerMenu sectionId={sectionId} setIsShown={setIsMenuShown} />
+        )}
         {!isMobile && <Anchor text="Get in touch" />}
       </Container>
     </HeaderWrapper>
