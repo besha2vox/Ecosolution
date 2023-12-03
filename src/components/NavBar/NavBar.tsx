@@ -6,12 +6,15 @@ import { TSectionId } from '../../types';
 
 import { ReactComponent as Arrow } from '../../assets/images/icons/arrow.svg';
 import { NavBarList, NavButton } from './NavBar.styled';
+import useScrollSectionHighlighter from '../../hooks/useScrollSectionHighlighter';
 
 interface INavBarProps {
   closeMenu: () => void;
 }
 
 const NavBar: React.FC<INavBarProps> = ({ closeMenu }) => {
+  const sectionId = useScrollSectionHighlighter();
+
   const handleClick = (id: TSectionId) => {
     closeMenu();
     scrollToElementById(id);
@@ -22,7 +25,10 @@ const NavBar: React.FC<INavBarProps> = ({ closeMenu }) => {
       <NavBarList>
         {navList.map(({ name, id }) => (
           <li key={id}>
-            <NavButton onClick={() => handleClick(id)}>
+            <NavButton
+              className={sectionId === id ? 'current' : ''}
+              onClick={() => handleClick(id)}
+            >
               {name} <Arrow width={16} height={16} />
             </NavButton>
           </li>

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const containerStyles = css`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,24 +20,46 @@ export const titleStyles = css`
 
   max-width: 286px;
 
-  &::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 48px;
-    background-color: ${({ theme }) => theme.colors.accent};
-  }
-
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     max-width: 368px;
-    &::after {
-      height: 87px;
-    }
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     row-gap: 16px;
     max-width: 491px;
+  }
+`;
+
+const rectangle = css`
+  content: '';
+  display: block;
+  width: 1px;
+  height: 48px;
+  background-color: ${({ theme }) => theme.colors.accent};
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 87px;
+  }
+`;
+
+export const RectangleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+  margin-bottom: 24px;
+
+  &::before {
+    ${rectangle}
+  }
+
+  &::after {
+    ${rectangle}
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    row-gap: 16px;
+    margin-bottom: 16px;
   }
 `;
 

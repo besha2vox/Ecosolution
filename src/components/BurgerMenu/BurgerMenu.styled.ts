@@ -63,7 +63,6 @@ export const DropDown = styled.div`
   height: calc(100dvh - 36px * 2);
 
   border-radius: 25px;
-  color: ${({ theme }) => theme.colors.light};
   background-color: ${({ theme }) => theme.background.dropdown};
   backdrop-filter: blur(12.5px);
 
@@ -90,6 +89,8 @@ export const CloseButton = styled.button`
 
   font-size: ${({ theme }) => theme.fontSizes[6]};
   letter-spacing: -0.8px;
+
+  color: ${({ theme }) => theme.colors.light};
 
   & svg {
     stroke: currentColor;

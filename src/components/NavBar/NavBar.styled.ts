@@ -17,11 +17,26 @@ export const NavButton = styled.button`
   align-items: center;
   column-gap: 8px;
 
-  &:hover {
+  font-size: ${({ theme }) => theme.fontSizes[6]};
+  letter-spacing: -0.96px;
+
+  color: ${({ theme }) => theme.colors.light};
+
+  &.current {
     color: ${({ theme }) => theme.colors.accent};
   }
-
   & svg {
     stroke: currentColor;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    color: ${({ theme }) => theme.colors.light}25;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.light};
+    }
   }
 `;

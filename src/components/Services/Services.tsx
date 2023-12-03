@@ -9,6 +9,7 @@ import {
   ServicesList,
   titleStyles,
 } from './Services.styled';
+import Electricity from './Electricity';
 
 const services = ['Solar', 'Wind', 'Hydro', 'Thermal', 'Nuclear'];
 
@@ -16,6 +17,7 @@ const Services: React.FC = () => {
   return (
     <Section id="service">
       <Container>
+        <Electricity />
         <Title type="h2" title="The services we provide" styles={titleStyles} />
         <ServiceWrapper>
           <Discription>

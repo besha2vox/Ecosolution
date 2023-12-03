@@ -5,7 +5,6 @@ import { theme, Theme } from './theme/theme';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Electricity from './components/Electricity';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import ContactUs from './components/ContactUs';
@@ -20,9 +19,8 @@ const App = () => {
       <main>
         <Hero />
         <About />
-        <Electricity />
-        <Cases />
         <Services />
+        <Cases />
         <FAQ />
         <Customers />
         <ContactUs />
