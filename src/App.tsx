@@ -11,6 +11,7 @@ import FAQ from './components/FAQ';
 import ContactUs from './components/ContactUs';
 import Customers from './components/Customers';
 import Services from './components/Services';
+import Cases from './components/Cases';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Hero />
         <About />
         <Electricity />
+        <Cases />
         <Services />
         <FAQ />
         <Customers />

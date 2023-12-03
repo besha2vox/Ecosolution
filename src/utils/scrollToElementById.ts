@@ -6,7 +6,7 @@ export const scrollToElementById = (elementId: TSectionId) => {
   if (element) {
     element.scrollIntoView({
       behavior: 'smooth',
-      block: 'start',
+      block: 'center',
     });
   }
 };

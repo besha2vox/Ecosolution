@@ -17,7 +17,7 @@ const Contacts: React.FC = () => {
         <p>Phone:</p>
         <ul>
           {phones.map((phone) => (
-            <li>
+            <li key={phone}>
               <ContactLink href={`tel:${phone}`}>
                 <PhoneIcon width={24} height={24} />
                 {phone}
@@ -27,7 +27,7 @@ const Contacts: React.FC = () => {
         </ul>
       </ContactItem>
       <ContactItem>
-        <p>Email:</p>
+        <p>E-mail:</p>
         <ContactLink href={`mailto:${email}`}>
           <EmailIcon width={24} height={24} />
           email

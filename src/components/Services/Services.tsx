@@ -12,7 +12,7 @@ import {
 
 const services = ['Solar', 'Wind', 'Hydro', 'Thermal', 'Nuclear'];
 
-const Services = () => {
+const Services: React.FC = () => {
   return (
     <Section id="service">
       <Container>
@@ -24,7 +24,7 @@ const Services = () => {
           </Discription>
           <ServicesList>
             {services.map((servise) => (
-              <li>
+              <li key={servise}>
                 <p>{servise}</p>
               </li>
             ))}
