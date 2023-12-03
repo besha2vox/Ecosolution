@@ -24,8 +24,8 @@ const Cases: React.FC = () => {
   const isMobile = device === 'mobile';
 
   const handlePrev = () => {
-    if (!isMobile && currentIndex <= 1) {
-      setCurrentIndex(3);
+    if (!isMobile && currentIndex <= 0) {
+      setCurrentIndex(casesData.length - 2);
     } else {
       setCurrentIndex(
         (prevIndex) => (prevIndex - 1 + casesData.length) % casesData.length
