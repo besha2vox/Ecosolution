@@ -30,7 +30,7 @@ const Contacts: React.FC = () => {
         <p>E-mail:</p>
         <ContactLink href={`mailto:${email}`}>
           <EmailIcon width={24} height={24} />
-          email
+          {email}
         </ContactLink>
       </ContactItem>
       <ContactItem>
