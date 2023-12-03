@@ -4,7 +4,7 @@ import { ReactComponent as Icon } from '../../../assets/images/icons/arrow-right
 import { log } from 'console';
 
 export const SliderWrapper = styled.div`
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.maxMobile}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.maxTablet}) {
     overflow: hidden;
   }
 `;

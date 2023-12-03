@@ -68,6 +68,8 @@ const Cases: React.FC = () => {
           </SliderInterface>
         </Wrapper>
         <Slider
+          handlePrev={handlePrev}
+          handleNext={handleNext}
           slides={casesData}
           currentIndex={currentIndex}
           device={device}

@@ -20,10 +20,20 @@ interface SliderProps {
   slides: TCasesSlider;
   currentIndex: number;
   device: TDevice;
+  handlePrev: () => void;
+  handleNext: () => void;
 }
 
-const Slider: React.FC<SliderProps> = ({ slides, currentIndex, device }) => {
+const Slider: React.FC<SliderProps> = ({
+  slides,
+  currentIndex,
+  device,
+  handlePrev,
+  handleNext,
+}) => {
   const [translateX, setTranslateX] = React.useState<string>('0');
+  const [startX, setStartX] = React.useState<number | null>(null);
+  const sliderRef = React.useRef<HTMLUListElement | null>(null);
 
   const calculateTransleteX = React.useCallback(
     (currentInx: number) => {
@@ -52,9 +62,38 @@ const Slider: React.FC<SliderProps> = ({ slides, currentIndex, device }) => {
     calculateTransleteX(currentIndex);
   }, [calculateTransleteX, currentIndex]);
 
+  React.useEffect(() => {
+    const handleTouchStart = (e: TouchEvent) => {
+      setStartX(e.touches[0].clientX);
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (startX !== null) {
+        const deltaX = e.changedTouches[0].clientX - startX;
+        if (deltaX > 0) {
+          handlePrev();
+        } else if (deltaX < 0) {
+          handleNext();
+        }
+      }
+    };
+
+    if (sliderRef.current) {
+      sliderRef.current.addEventListener('touchstart', handleTouchStart);
+      sliderRef.current.addEventListener('touchend', handleTouchEnd);
+    }
+
+    return () => {
+      if (sliderRef.current) {
+        sliderRef.current.removeEventListener('touchstart', handleTouchStart);
+        sliderRef.current.removeEventListener('touchend', handleTouchEnd);
+      }
+    };
+  }, [handleNext, handlePrev, startX]);
+
   return (
     <SliderWrapper>
-      <List translateX={translateX}>
+      <List ref={sliderRef} translateX={translateX}>
         {slides.map(
           ({ address, company, description, date, imgX1, imgX2 }, i) => (
             <Item key={description}>

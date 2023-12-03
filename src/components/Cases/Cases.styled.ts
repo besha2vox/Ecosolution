@@ -69,13 +69,6 @@ export const Counter = styled.p`
   }
 `;
 
-/*
-@media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-}
-
-@media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-}
-*/
 export const buttonStyles = css`
   padding: 15px;
   border: 1px solid currentColor;
